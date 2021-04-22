@@ -13,3 +13,9 @@ enum Direction: CaseIterable {
     case south
     case west
 }
+
+enum Command {
+    case forward
+    case right
+    case left
+}

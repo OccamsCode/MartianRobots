@@ -11,7 +11,7 @@ import CoreGraphics
 class Locomotion {
     
     let environment: Environment
-    let object: Movable
+    var object: Movable
     
     init(on object: Movable, in environment: Environment) {
         self.environment = environment
@@ -54,6 +54,31 @@ class Locomotion {
         case .west: return .north
         case .south: return .west
         case .east: return .south
+        }
+        
+    }
+    
+    func execute(_ commands: [Command]) {
+        
+        for command in commands {
+            
+            switch command {
+            case .forward:
+                
+                let newLocation = moveForward()
+                object.location = newLocation
+                
+            case .left:
+                
+                let newHeading = turnLeft()
+                object.direction = newHeading
+                
+            case .right:
+                
+                let newHeading = turnRight()
+                object.direction = newHeading
+            }
+            
         }
         
     }
