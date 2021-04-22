@@ -15,3 +15,11 @@ protocol Movable {
     
     init(_ origin: CGPoint, heading: Direction)
 }
+
+protocol Environment {
+    
+    var size: CGRect { get }
+    
+    init(_ origin: CGPoint, width: Int, height: Int)
+    
+}
