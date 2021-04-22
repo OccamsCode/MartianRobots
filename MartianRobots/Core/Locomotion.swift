@@ -36,7 +36,7 @@ class Locomotion {
     }
     
     func turnLeft() -> Direction {
-
+        
         switch object.direction {
         case .north: return .west
         case .west: return .south
@@ -65,7 +65,21 @@ class Locomotion {
             case .forward:
                 
                 let newLocation = moveForward()
-                object.location = newLocation
+                
+                if !environment.exists(newLocation) {
+                    
+                    if environment.containsScent(at: object.location, heading: object.direction) {
+                        continue
+                    } else {
+                        
+                        environment.addScent(at: object.location, heading: object.direction)
+                        object.currentStatus = .lost
+                        return
+                    }
+                    
+                } else {
+                    object.location = newLocation
+                }
                 
             case .left:
                 

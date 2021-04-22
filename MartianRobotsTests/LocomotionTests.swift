@@ -329,4 +329,260 @@ class LocomotionTests: XCTestCase {
         
         XCTAssertEqual(result, .east)
     }
+    
+    func test_SampleInputOne_StatusOk() {
+        
+        mockPlanet = Planet(.zero, width: 5, height: 3)
+        let rover = Rover(Point(x: 1, y: 1), heading: .east)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [Command.right, .forward, .right, .forward, .right, .forward, .right, .forward]
+        sut.execute(commands)
+        
+        let result = rover.currentStatus
+        
+        XCTAssertEqual(result, .ok)
+    }
+    
+    /*
+     Input:
+     53
+     32N
+     FRR FLL FFR RFLL
+     
+     Output:
+     33NLOST
+     */
+    func test_SampleInputTwo_Location() {
+        
+        mockPlanet = Planet(.zero, width: 5, height: 3)
+        let rover = Rover(Point(x: 3, y: 2), heading: .north)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [
+            Command.forward, .right, .right,
+            .forward, .left, .left,
+            .forward, .forward, .right,
+            .right, .forward, .left, .left
+        ]
+        sut.execute(commands)
+        
+        let result = rover.location
+        
+        XCTAssertEqual(result, Point(x: 3, y: 3))
+    }
+    
+    func test_SampleInputTwo_Heading() {
+        
+        mockPlanet = Planet(.zero, width: 5, height: 3)
+        let rover = Rover(Point(x: 3, y: 2), heading: .north)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [
+            Command.forward, .right, .right,
+            .forward, .left, .left,
+            .forward, .forward, .right,
+            .right, .forward, .left, .left
+        ]
+        sut.execute(commands)
+        
+        let result = rover.direction
+        
+        XCTAssertEqual(result, .north)
+    }
+    
+    func test_SampleInputTwo_StatusLost() {
+        
+        mockPlanet = Planet(.zero, width: 5, height: 3)
+        let rover = Rover(Point(x: 3, y: 2), heading: .north)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [
+            Command.forward, .right, .right,
+            .forward, .left, .left,
+            .forward, .forward, .right,
+            .right, .forward, .left, .left
+        ]
+        sut.execute(commands)
+        
+        let result = rover.currentStatus
+        
+        XCTAssertEqual(result, .lost)
+    }
+
+    /*
+     Input:
+     53
+     03W
+     LLF FFL FLFL
+     
+     Output:
+     23S
+     */
+    func test_SampleInputThree_Location() {
+        
+        let scent = [
+            Point(x: 3, y: 3): [Direction.north]
+        ]
+        mockPlanet = Planet(.zero, width: 5, height: 3, scents: scent)
+        let rover = Rover(Point(x: 0, y: 2), heading: .west)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [
+            Command.left, .left, .forward,
+            .forward, .forward, .left,
+            .forward, .left, .forward, .left
+        ]
+        sut.execute(commands)
+        
+        let result = rover.location
+        
+        XCTAssertEqual(result, Point(x: 2, y: 3))
+    }
+    
+    /*
+     Input
+     22
+     11S
+     FFF FFF
+     
+     11S
+     FFF FFR
+     
+     Output
+     00SLOST
+     
+     00E
+     */
+    func test_CustomInput_FistObjectLocation() {
+        
+        mockPlanet = Planet(.zero, width: 2, height: 2)
+        let roverOne = Rover(Point(x: 1, y: 1), heading: .south)
+        let sut = Locomotion(on: roverOne, in: mockPlanet)
+        
+        let commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .forward
+        ]
+        
+        sut.execute(commands)
+        
+        let result = roverOne.location
+        
+        XCTAssertEqual(result, Point(x: 1, y: 0))
+    }
+    
+    func test_CustomInput_FistObjectHeading() {
+        
+        mockPlanet = Planet(.zero, width: 2, height: 2)
+        let roverOne = Rover(Point(x: 1, y: 1), heading: .south)
+        let sut = Locomotion(on: roverOne, in: mockPlanet)
+        
+        let commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .forward
+        ]
+        
+        sut.execute(commands)
+        
+        let result = roverOne.direction
+        
+        XCTAssertEqual(result, .south)
+    }
+    
+    func test_CustomInput_FistObjectStatus() {
+        
+        mockPlanet = Planet(.zero, width: 2, height: 2)
+        let roverOne = Rover(Point(x: 1, y: 1), heading: .south)
+        let sut = Locomotion(on: roverOne, in: mockPlanet)
+        
+        let commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .forward
+        ]
+        
+        sut.execute(commands)
+        
+        let result = roverOne.currentStatus
+        
+        XCTAssertEqual(result, .lost)
+    }
+    
+    func test_CustomInput_SecondObjectLocation() {
+        
+        mockPlanet = Planet(.zero, width: 2, height: 2)
+        let roverOne = Rover(Point(x: 1, y: 1), heading: .south)
+        var sut = Locomotion(on: roverOne, in: mockPlanet)
+        
+        var commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .forward
+        ]
+        
+        sut.execute(commands)
+        
+        let roverTwo = Rover(Point(x: 1, y: 1), heading: .south)
+        
+        commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .right
+        ]
+        
+        sut = Locomotion(on: roverTwo, in: mockPlanet)
+        
+        sut.execute(commands)
+        
+        let result = roverTwo.location
+        
+        XCTAssertEqual(result, Point(x: 1, y: 0))
+    }
+    
+    func test_CustomInput_SecondObjectHeading() {
+        
+        mockPlanet = Planet(.zero, width: 2, height: 2)
+        let roverOne = Rover(Point(x: 1, y: 1), heading: .south)
+        var sut = Locomotion(on: roverOne, in: mockPlanet)
+        
+        var commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .forward
+        ]
+        
+        sut.execute(commands)
+        
+        let roverTwo = Rover(Point(x: 1, y: 1), heading: .south)
+        
+        commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .right
+        ]
+        
+        sut = Locomotion(on: roverTwo, in: mockPlanet)
+        
+        sut.execute(commands)
+        
+        let result = roverTwo.direction
+        
+        XCTAssertEqual(result, .west)
+    }
+    
+    func test_CustomInput_SecondObjectStatus() {
+        
+        mockPlanet = Planet(.zero, width: 2, height: 2)
+        let roverOne = Rover(Point(x: 1, y: 1), heading: .south)
+        var sut = Locomotion(on: roverOne, in: mockPlanet)
+        
+        var commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .forward
+        ]
+        
+        sut.execute(commands)
+        
+        let roverTwo = Rover(Point(x: 1, y: 1), heading: .south)
+        
+        commands = [
+            Command.forward, .forward, .forward, .forward, .forward, .right
+        ]
+        
+        sut = Locomotion(on: roverTwo, in: mockPlanet)
+        
+        sut.execute(commands)
+        
+        let result = roverTwo.currentStatus
+        
+        XCTAssertEqual(result, .ok)
+    }
 }
