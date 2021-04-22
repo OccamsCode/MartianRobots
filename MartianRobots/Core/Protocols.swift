@@ -6,22 +6,21 @@
 //
 
 import Foundation
-import CoreGraphics
 
 protocol Movable {
     
-    var location: CGPoint { get set }
+    var location: Point { get set }
     var direction: Direction { get set }
     
-    init(_ origin: CGPoint, heading: Direction)
+    init(_ origin: Point, heading: Direction)
 }
 
 protocol Environment {
     
-    var size: CGRect { get }
+    var size: Rect { get }
     
-    init(_ origin: CGPoint, width: Int, height: Int)
+    init(_ origin: Point, width: Int, height: Int)
     
-    func exists(_ location: CGPoint) -> Bool
+    func exists(_ location: Point) -> Bool
     
 }

@@ -6,20 +6,17 @@
 //
 
 import Foundation
-import CoreGraphics
 
 class Planet: Environment {
     
-    let size: CGRect
+    let size: Rect
     
-    required init(_ origin: CGPoint, width: Int, height: Int) {
-        self.size = CGRect(origin: origin, size: CGSize(width: width, height: height))
+    required init(_ origin: Point, width: Int, height: Int) {
+        self.size = Rect(origin, size: Size(width: width, height: height))
     }
     
-    func exists(_ location: CGPoint) -> Bool {
-
-        let frame = CGRect(origin: size.origin, size: CGSize(width: location.x, height: location.y))
-        return size.contains(frame)
+    func exists(_ location: Point) -> Bool {
+        return size.contains(location)
     }
     
 }

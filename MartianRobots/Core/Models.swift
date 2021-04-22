@@ -20,9 +20,9 @@ enum Command {
     case left
 }
 
-struct Point {
-    let x: Int
-    let y: Int
+struct Point: Equatable {
+    var x: Int
+    var y: Int
     
     static let zero = Point(x: 0, y: 0)
 }
@@ -35,6 +35,15 @@ struct Size {
 struct Rect {
     var origin: Point
     var size: Size
+    
+    var width: Int { return size.width }
+    
+    var height: Int { return size.height }
+    
+    init(_ origin: Point, size: Size) {
+        self.origin = origin
+        self.size = size
+    }
     
     init(_ origin: Point, width: Int, height: Int) {
         self.origin = origin

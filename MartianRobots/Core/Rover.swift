@@ -6,15 +6,14 @@
 //
 
 import Foundation
-import CoreGraphics
 
 class Rover: Movable {
     
-    var location: CGPoint
+    var location: Point
     
     var direction: Direction
     
-    required init(_ origin: CGPoint, heading: Direction) {
+    required init(_ origin: Point, heading: Direction) {
         self.location = origin
         self.direction = heading
     }

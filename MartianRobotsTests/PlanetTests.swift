@@ -13,7 +13,7 @@ class PlanetTests: XCTestCase {
     //MARK:- Init Location
     func test_InitialPlanet_Origin_ZeroZero() {
         
-        let location = CGPoint(x: 0, y: 0)
+        let location = Point(x: 0, y: 0)
         let sut = Planet(location, width: 0, height: 0)
         
         let result = sut.size.origin
@@ -23,7 +23,7 @@ class PlanetTests: XCTestCase {
     
     func test_InitialPlanet_Origin_OneZero() {
         
-        let location = CGPoint(x: 1, y: 0)
+        let location = Point(x: 1, y: 0)
         let sut = Planet(location, width: 0, height: 0)
         
         let result = sut.size.origin
@@ -33,7 +33,7 @@ class PlanetTests: XCTestCase {
     
     func test_InitialPlanet_Origin_ZeroOne() {
         
-        let location = CGPoint(x: 0, y: 1)
+        let location = Point(x: 0, y: 1)
         let sut = Planet(location, width: 0, height: 0)
         
         let result = sut.size.origin
@@ -43,7 +43,7 @@ class PlanetTests: XCTestCase {
     
     func test_InitialPlanet_Origin_OneOne() {
         
-        let location = CGPoint(x: 1, y: 1)
+        let location = Point(x: 1, y: 1)
         let sut = Planet(location, width: 0, height: 0)
         
         let result = sut.size.origin
@@ -97,7 +97,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_ExistsZeroZero() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 0, y: 0)
+        let location = Point(x: 0, y: 0)
         
         let result = sut.exists(location)
         
@@ -107,7 +107,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_ExistsZeroOne() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 0, y: 1)
+        let location = Point(x: 0, y: 1)
         
         let result = sut.exists(location)
         
@@ -117,7 +117,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_ExistsZeroTwo() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 0, y: 2)
+        let location = Point(x: 0, y: 2)
         
         let result = sut.exists(location)
         
@@ -127,7 +127,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_NotExistsZeroThree() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 0, y: 3)
+        let location = Point(x: 0, y: 3)
         
         let result = sut.exists(location)
         
@@ -137,7 +137,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_ExistsOneZero() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 1, y: 0)
+        let location = Point(x: 1, y: 0)
         
         let result = sut.exists(location)
         
@@ -147,7 +147,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_ExistsTwoZero() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 2, y: 0)
+        let location = Point(x: 2, y: 0)
         
         let result = sut.exists(location)
         
@@ -157,7 +157,7 @@ class PlanetTests: XCTestCase {
     func test_TwoByTwoPlanet_NotExistsThreeZero() {
         
         let sut = Planet(.zero, width: 2, height: 2)
-        let location = CGPoint(x: 3, y: 0)
+        let location = Point(x: 3, y: 0)
         
         let result = sut.exists(location)
         

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreGraphics
 
 class Locomotion {
     
@@ -18,7 +17,7 @@ class Locomotion {
         self.object = object
     }
     
-    func moveForward() -> CGPoint {
+    func moveForward() -> Point {
         
         var newLocation = object.location
         

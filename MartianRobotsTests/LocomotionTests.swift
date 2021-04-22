@@ -23,42 +23,42 @@ class LocomotionTests: XCTestCase {
     //MARK:- Move Forward
     func test_MoveForward_HeadingNorthFromFiveFive() throws {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         let result = sut.moveForward()
         
-        XCTAssertEqual(result, CGPoint(x: 5, y: 6))
+        XCTAssertEqual(result, Point(x: 5, y: 6))
     }
     
     func test_MoveForward_HeadingEastFromFiveFive() throws {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .east)
+        let rover = Rover(Point(x: 5, y: 5), heading: .east)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         let result = sut.moveForward()
         
-        XCTAssertEqual(result, CGPoint(x: 6, y: 5))
+        XCTAssertEqual(result, Point(x: 6, y: 5))
     }
     
     func test_MoveForward_HeadingSouthFromFiveFive() throws {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .south)
+        let rover = Rover(Point(x: 5, y: 5), heading: .south)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         let result = sut.moveForward()
         
-        XCTAssertEqual(result, CGPoint(x: 5, y: 4))
+        XCTAssertEqual(result, Point(x: 5, y: 4))
     }
     
     func test_MoveForward_HeadingWestFromFiveFive() throws {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .west)
+        let rover = Rover(Point(x: 5, y: 5), heading: .west)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         let result = sut.moveForward()
         
-        XCTAssertEqual(result, CGPoint(x: 4, y: 5))
+        XCTAssertEqual(result, Point(x: 4, y: 5))
     }
     
     //MARK:- Turn Left
@@ -154,7 +154,7 @@ class LocomotionTests: XCTestCase {
     //MARK:- Execute Commands - Empty
     func test_FiveFiveHeadingNorth_NoCommands_NoChangeInLocation() {
         
-        let location = CGPoint(x: 5, y: 5)
+        let location = Point(x: 5, y: 5)
         let rover = Rover(location, heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
@@ -167,7 +167,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_NoCommands_NoChangeInHeading() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute([])
@@ -180,32 +180,32 @@ class LocomotionTests: XCTestCase {
     //MARK:- Execute Commands - Forward
     func test_FiveFiveHeadingNorth_SingleForward_MovesForward() {
 
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute([.forward])
         let result = rover.location
         
-        XCTAssertEqual(result, CGPoint(x: 5, y: 6))
+        XCTAssertEqual(result, Point(x: 5, y: 6))
         
     }
     
     func test_FiveFiveHeadingNorth_MultipleForward_MovesForward() {
 
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute([.forward, .forward, .forward])
         let result = rover.location
         
-        XCTAssertEqual(result, CGPoint(x: 5, y: 8))
+        XCTAssertEqual(result, Point(x: 5, y: 8))
         
     }
     
     //MARK:- Execute Commands - Turn Left
     func test_FiveFiveHeadingNorth_SingleTurnLeft_TurnsLeft() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.left, count: 1))
@@ -216,7 +216,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_DoubleTurnLeft_TurnsLeft() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.left, count: 2))
@@ -227,7 +227,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_TripleTurnLeft_TurnsLeft() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.left, count: 3))
@@ -238,7 +238,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_QuadTurnLeft_TurnsLeft() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.left, count: 4))
@@ -249,7 +249,7 @@ class LocomotionTests: XCTestCase {
     //MARK:- Execute Commands - Turn Right
     func test_FiveFiveHeadingNorth_SingleTurnRight_TurnsRight() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.right, count: 1))
@@ -260,7 +260,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_DoubleTurnRight_TurnsRight() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.right, count: 2))
@@ -271,7 +271,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_TripleTurnRight_TurnsRight() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.right, count: 3))
@@ -282,7 +282,7 @@ class LocomotionTests: XCTestCase {
     
     func test_FiveFiveHeadingNorth_QuadTurnRight_TurnsRight() {
         
-        let rover = Rover(CGPoint(x: 5, y: 5), heading: .north)
+        let rover = Rover(Point(x: 5, y: 5), heading: .north)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         sut.execute(Array(repeating: Command.right, count: 4))
@@ -305,7 +305,7 @@ class LocomotionTests: XCTestCase {
     func test_SampleInputOne_Location() {
         
         mockPlanet = Planet(.zero, width: 5, height: 3)
-        let rover = Rover(CGPoint(x: 1, y: 1), heading: .east)
+        let rover = Rover(Point(x: 1, y: 1), heading: .east)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         let commands = [Command.right, .forward, .right, .forward, .right, .forward, .right, .forward]
@@ -313,13 +313,13 @@ class LocomotionTests: XCTestCase {
         
         let result = rover.location
         
-        XCTAssertEqual(result, CGPoint(x: 1, y: 1))
+        XCTAssertEqual(result, Point(x: 1, y: 1))
     }
     
     func test_SampleInputOne_Heading() {
         
         mockPlanet = Planet(.zero, width: 5, height: 3)
-        let rover = Rover(CGPoint(x: 1, y: 1), heading: .east)
+        let rover = Rover(Point(x: 1, y: 1), heading: .east)
         let sut = Locomotion(on: rover, in: mockPlanet)
         
         let commands = [Command.right, .forward, .right, .forward, .right, .forward, .right, .forward]
