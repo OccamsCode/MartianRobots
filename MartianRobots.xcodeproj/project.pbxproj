@@ -13,7 +13,10 @@
 		BAAC116D26319C0A00757C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAC116B26319C0A00757C17 /* Main.storyboard */; };
 		BAAC116F26319C0C00757C17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAC116E26319C0C00757C17 /* Assets.xcassets */; };
 		BAAC117226319C0C00757C17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAC117026319C0C00757C17 /* LaunchScreen.storyboard */; };
-		BAAC117D26319C0D00757C17 /* MartianRobotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC117C26319C0D00757C17 /* MartianRobotsTests.swift */; };
+		BAAC11A42631A89200757C17 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11A32631A89100757C17 /* Models.swift */; };
+		BAAC11A82631A8AC00757C17 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11A72631A8AC00757C17 /* Protocols.swift */; };
+		BAAC11AC2631AA4C00757C17 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11AB2631AA4C00757C17 /* Rover.swift */; };
+		BAAC11B22631AABF00757C17 /* RoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11B12631AABF00757C17 /* RoverTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,11 @@
 		BAAC117126319C0C00757C17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAAC117326319C0C00757C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAAC117826319C0D00757C17 /* MartianRobotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MartianRobotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAAC117C26319C0D00757C17 /* MartianRobotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianRobotsTests.swift; sourceTree = "<group>"; };
 		BAAC117E26319C0D00757C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAAC11A32631A89100757C17 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BAAC11A72631A8AC00757C17 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		BAAC11AB2631AA4C00757C17 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		BAAC11B12631AABF00757C17 /* RoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +97,8 @@
 		BAAC117B26319C0D00757C17 /* MartianRobotsTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAAC117C26319C0D00757C17 /* MartianRobotsTests.swift */,
 				BAAC117E26319C0D00757C17 /* Info.plist */,
+				BAAC11B12631AABF00757C17 /* RoverTests.swift */,
 			);
 			path = MartianRobotsTests;
 			sourceTree = "<group>";
@@ -100,6 +106,9 @@
 		BAAC119E2631A63300757C17 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BAAC11A32631A89100757C17 /* Models.swift */,
+				BAAC11A72631A8AC00757C17 /* Protocols.swift */,
+				BAAC11AB2631AA4C00757C17 /* Rover.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 					};
 					BAAC117726319C0D00757C17 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = BAAC116126319C0A00757C17;
 					};
 				};
@@ -223,9 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAC11A82631A8AC00757C17 /* Protocols.swift in Sources */,
 				BAAC116A26319C0A00757C17 /* ViewController.swift in Sources */,
+				BAAC11AC2631AA4C00757C17 /* Rover.swift in Sources */,
 				BAAC116626319C0A00757C17 /* AppDelegate.swift in Sources */,
 				BAAC116826319C0A00757C17 /* SceneDelegate.swift in Sources */,
+				BAAC11A42631A89200757C17 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAC117D26319C0D00757C17 /* MartianRobotsTests.swift in Sources */,
+				BAAC11B22631AABF00757C17 /* RoverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +439,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MartianRobotsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -436,6 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.MartianRobotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MartianRobots.app/MartianRobots";
@@ -447,6 +462,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MartianRobotsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
