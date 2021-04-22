@@ -22,4 +22,6 @@ protocol Environment {
     
     init(_ origin: CGPoint, width: Int, height: Int)
     
+    func exists(_ location: CGPoint) -> Bool
+    
 }

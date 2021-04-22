@@ -16,4 +16,10 @@ class Planet: Environment {
         self.size = CGRect(origin: origin, size: CGSize(width: width, height: height))
     }
     
+    func exists(_ location: CGPoint) -> Bool {
+
+        let frame = CGRect(origin: size.origin, size: CGSize(width: location.x, height: location.y))
+        return size.contains(frame)
+    }
+    
 }

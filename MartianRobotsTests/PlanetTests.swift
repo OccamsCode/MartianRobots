@@ -92,4 +92,75 @@ class PlanetTests: XCTestCase {
         
         XCTAssertEqual(result, height)
     }
+    
+    //MARK:- Can Move To Location
+    func test_TwoByTwoPlanet_ExistsZeroZero() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 0, y: 0)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertTrue(result)
+    }
+    
+    func test_TwoByTwoPlanet_ExistsZeroOne() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 0, y: 1)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertTrue(result)
+    }
+    
+    func test_TwoByTwoPlanet_ExistsZeroTwo() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 0, y: 2)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertTrue(result)
+    }
+    
+    func test_TwoByTwoPlanet_NotExistsZeroThree() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 0, y: 3)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertFalse(result)
+    }
+    
+    func test_TwoByTwoPlanet_ExistsOneZero() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 1, y: 0)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertTrue(result)
+    }
+    
+    func test_TwoByTwoPlanet_ExistsTwoZero() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 2, y: 0)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertTrue(result)
+    }
+    
+    func test_TwoByTwoPlanet_NotExistsThreeZero() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        let location = CGPoint(x: 3, y: 0)
+        
+        let result = sut.exists(location)
+        
+        XCTAssertFalse(result)
+    }
 }
