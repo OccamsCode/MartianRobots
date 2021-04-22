@@ -32,7 +32,7 @@ struct Point: Hashable {
     static let zero = Point(x: 0, y: 0)
 }
 
-struct Size {
+struct Size: Equatable {
     var width: Int
     var height: Int
 }

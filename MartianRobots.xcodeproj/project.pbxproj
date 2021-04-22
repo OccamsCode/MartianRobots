@@ -22,6 +22,8 @@
 		BAAC11BE2631BCF600757C17 /* Locomotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11BD2631BCF600757C17 /* Locomotion.swift */; };
 		BAAC11C22631BDE800757C17 /* LocomotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11C12631BDE800757C17 /* LocomotionTests.swift */; };
 		BAAC11C62631DC1100757C17 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11C52631DC1100757C17 /* GeometryTests.swift */; };
+		BAAC11CC26320BA300757C17 /* IntputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11CB26320BA300757C17 /* IntputParser.swift */; };
+		BAAC11D026320BC000757C17 /* InputParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11CF26320BC000757C17 /* InputParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		BAAC11BD2631BCF600757C17 /* Locomotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotion.swift; sourceTree = "<group>"; };
 		BAAC11C12631BDE800757C17 /* LocomotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotionTests.swift; sourceTree = "<group>"; };
 		BAAC11C52631DC1100757C17 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
+		BAAC11CB26320BA300757C17 /* IntputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntputParser.swift; sourceTree = "<group>"; };
+		BAAC11CF26320BC000757C17 /* InputParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				BAAC11B92631AF5800757C17 /* PlanetTests.swift */,
 				BAAC11C12631BDE800757C17 /* LocomotionTests.swift */,
 				BAAC11C52631DC1100757C17 /* GeometryTests.swift */,
+				BAAC11CF26320BC000757C17 /* InputParserTests.swift */,
 			);
 			path = MartianRobotsTests;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				BAAC11AB2631AA4C00757C17 /* Rover.swift */,
 				BAAC11B52631AEC500757C17 /* Planet.swift */,
 				BAAC11BD2631BCF600757C17 /* Locomotion.swift */,
+				BAAC11CB26320BA300757C17 /* IntputParser.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			files = (
 				BAAC11A82631A8AC00757C17 /* Protocols.swift in Sources */,
 				BAAC116A26319C0A00757C17 /* ViewController.swift in Sources */,
+				BAAC11CC26320BA300757C17 /* IntputParser.swift in Sources */,
 				BAAC11AC2631AA4C00757C17 /* Rover.swift in Sources */,
 				BAAC116626319C0A00757C17 /* AppDelegate.swift in Sources */,
 				BAAC11B62631AEC500757C17 /* Planet.swift in Sources */,
@@ -267,6 +274,7 @@
 				BAAC11C62631DC1100757C17 /* GeometryTests.swift in Sources */,
 				BAAC11C22631BDE800757C17 /* LocomotionTests.swift in Sources */,
 				BAAC11BA2631AF5800757C17 /* PlanetTests.swift in Sources */,
+				BAAC11D026320BC000757C17 /* InputParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
