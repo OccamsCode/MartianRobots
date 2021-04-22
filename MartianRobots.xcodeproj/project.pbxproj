@@ -19,6 +19,8 @@
 		BAAC11B22631AABF00757C17 /* RoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11B12631AABF00757C17 /* RoverTests.swift */; };
 		BAAC11B62631AEC500757C17 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11B52631AEC500757C17 /* Planet.swift */; };
 		BAAC11BA2631AF5800757C17 /* PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11B92631AF5800757C17 /* PlanetTests.swift */; };
+		BAAC11BE2631BCF600757C17 /* Locomotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11BD2631BCF600757C17 /* Locomotion.swift */; };
+		BAAC11C22631BDE800757C17 /* LocomotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11C12631BDE800757C17 /* LocomotionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		BAAC11B12631AABF00757C17 /* RoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverTests.swift; sourceTree = "<group>"; };
 		BAAC11B52631AEC500757C17 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		BAAC11B92631AF5800757C17 /* PlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTests.swift; sourceTree = "<group>"; };
+		BAAC11BD2631BCF600757C17 /* Locomotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotion.swift; sourceTree = "<group>"; };
+		BAAC11C12631BDE800757C17 /* LocomotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				BAAC117E26319C0D00757C17 /* Info.plist */,
 				BAAC11B12631AABF00757C17 /* RoverTests.swift */,
 				BAAC11B92631AF5800757C17 /* PlanetTests.swift */,
+				BAAC11C12631BDE800757C17 /* LocomotionTests.swift */,
 			);
 			path = MartianRobotsTests;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				BAAC11A72631A8AC00757C17 /* Protocols.swift */,
 				BAAC11AB2631AA4C00757C17 /* Rover.swift */,
 				BAAC11B52631AEC500757C17 /* Planet.swift */,
+				BAAC11BD2631BCF600757C17 /* Locomotion.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				BAAC116626319C0A00757C17 /* AppDelegate.swift in Sources */,
 				BAAC11B62631AEC500757C17 /* Planet.swift in Sources */,
 				BAAC116826319C0A00757C17 /* SceneDelegate.swift in Sources */,
+				BAAC11BE2631BCF600757C17 /* Locomotion.swift in Sources */,
 				BAAC11A42631A89200757C17 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAAC11B22631AABF00757C17 /* RoverTests.swift in Sources */,
+				BAAC11C22631BDE800757C17 /* LocomotionTests.swift in Sources */,
 				BAAC11BA2631AF5800757C17 /* PlanetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
