@@ -36,4 +36,25 @@ class Locomotion {
         return newLocation
     }
     
+    func turnLeft() -> Direction {
+
+        switch object.direction {
+        case .north: return .west
+        case .west: return .south
+        case .south: return .east
+        case .east: return .north
+        }
+        
+    }
+    
+    func turnRight() -> Direction {
+        
+        switch object.direction {
+        case .north: return .east
+        case .west: return .north
+        case .south: return .west
+        case .east: return .south
+        }
+        
+    }
 }
