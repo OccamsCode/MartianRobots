@@ -290,4 +290,43 @@ class LocomotionTests: XCTestCase {
         
         XCTAssertEqual(result, .north)
     }
+    
+    //MARK:- Sample Input
+    
+    /*
+     Input:
+     53
+     11E
+     RFRFRFRF
+     
+     Output:
+     11E
+     */
+    func test_SampleInputOne_Location() {
+        
+        mockPlanet = Planet(.zero, width: 5, height: 3)
+        let rover = Rover(CGPoint(x: 1, y: 1), heading: .east)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [Command.right, .forward, .right, .forward, .right, .forward, .right, .forward]
+        sut.execute(commands)
+        
+        let result = rover.location
+        
+        XCTAssertEqual(result, CGPoint(x: 1, y: 1))
+    }
+    
+    func test_SampleInputOne_Heading() {
+        
+        mockPlanet = Planet(.zero, width: 5, height: 3)
+        let rover = Rover(CGPoint(x: 1, y: 1), heading: .east)
+        let sut = Locomotion(on: rover, in: mockPlanet)
+        
+        let commands = [Command.right, .forward, .right, .forward, .right, .forward, .right, .forward]
+        sut.execute(commands)
+        
+        let result = rover.direction
+        
+        XCTAssertEqual(result, .east)
+    }
 }
