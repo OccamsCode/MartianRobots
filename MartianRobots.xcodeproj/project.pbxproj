@@ -21,6 +21,7 @@
 		BAAC11BA2631AF5800757C17 /* PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11B92631AF5800757C17 /* PlanetTests.swift */; };
 		BAAC11BE2631BCF600757C17 /* Locomotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11BD2631BCF600757C17 /* Locomotion.swift */; };
 		BAAC11C22631BDE800757C17 /* LocomotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11C12631BDE800757C17 /* LocomotionTests.swift */; };
+		BAAC11C62631DC1100757C17 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC11C52631DC1100757C17 /* GeometryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		BAAC11B92631AF5800757C17 /* PlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTests.swift; sourceTree = "<group>"; };
 		BAAC11BD2631BCF600757C17 /* Locomotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotion.swift; sourceTree = "<group>"; };
 		BAAC11C12631BDE800757C17 /* LocomotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotionTests.swift; sourceTree = "<group>"; };
+		BAAC11C52631DC1100757C17 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				BAAC11B12631AABF00757C17 /* RoverTests.swift */,
 				BAAC11B92631AF5800757C17 /* PlanetTests.swift */,
 				BAAC11C12631BDE800757C17 /* LocomotionTests.swift */,
+				BAAC11C52631DC1100757C17 /* GeometryTests.swift */,
 			);
 			path = MartianRobotsTests;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAAC11B22631AABF00757C17 /* RoverTests.swift in Sources */,
+				BAAC11C62631DC1100757C17 /* GeometryTests.swift in Sources */,
 				BAAC11C22631BDE800757C17 /* LocomotionTests.swift in Sources */,
 				BAAC11BA2631AF5800757C17 /* PlanetTests.swift in Sources */,
 			);
