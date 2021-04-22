@@ -163,4 +163,64 @@ class PlanetTests: XCTestCase {
         
         XCTAssertFalse(result)
     }
+    
+    //MARK:- Scent Tests
+    func test_InitialPlanet_CurrentScents_isEmpty() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        
+        let result = sut.scents.isEmpty
+        
+        XCTAssertTrue(result)
+    }
+    
+    func test_PlanetWithScent_CurrentScents_isNotEmpty() {
+        
+        let scent = [Point.zero:[Direction.south]]
+        let sut = Planet(.zero, width: 2, height: 2, scents: scent)
+        
+        let result = sut.scents.isEmpty
+        
+        XCTAssertFalse(result)
+    }
+    
+    func test_InitialPlanet_AddScent_isNotEmpty() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        
+        sut.addScent(at: .zero, heading: .south)
+        let result = sut.scents.isEmpty
+        
+        XCTAssertFalse(result)
+    }
+
+    func test_InitialPlanet_ContainsScent_ScentNotFound() {
+        
+        let sut = Planet(.zero, width: 2, height: 2)
+        
+        let result = sut.containsScent(at: .zero, heading: .south)
+        
+        XCTAssertFalse(result)
+        
+    }
+    
+    func test_PlanetWithScent_ContainsFakeScent_ScentNotFound() {
+        
+        let scent = [Point.zero:[Direction.south]]
+        let sut = Planet(.zero, width: 2, height: 2, scents: scent)
+        
+        let result = sut.containsScent(at: .zero, heading: .north)
+        
+        XCTAssertFalse(result)
+    }
+    
+    func test_PlanetWithScent_ContainsRealScent_ScentNotFound() {
+        
+        let scent = [Point.zero:[Direction.south]]
+        let sut = Planet(.zero, width: 2, height: 2, scents: scent)
+        
+        let result = sut.containsScent(at: .zero, heading: .south)
+        
+        XCTAssertTrue(result)
+    }
 }

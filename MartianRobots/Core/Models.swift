@@ -20,7 +20,12 @@ enum Command {
     case left
 }
 
-struct Point: Equatable {
+enum Status {
+    case ok
+    case lost
+}
+
+struct Point: Hashable {
     var x: Int
     var y: Int
     
