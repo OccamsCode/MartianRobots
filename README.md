@@ -16,9 +16,9 @@ The surface of Mars can be modelled by a rectangular grid around which robots ar
 ## Next Steps
  1. Complete the Input Parser
  2. Create an Output Parser, which will receive a list of *Movable* objects and return a string representing their location, heading and status
- 3. Create the app user interface
-     Scene 1. A input textfield with a button to proceed to the next scene. 
-     Scene 2: An output label indicating the final positions and heading of the given robots
-4. Create the app logic
-    a. Following either MVC or MVVM, either is simple enough in this case
-    b. Mostly involves passing the input from the View through to various parts of the Core 
+ 3. Create the application user interface
+    - Scene 1. A input textfield with a button to proceed to the next scene. 
+    - Scene 2: An output label indicating the final positions and heading of the given robots
+4. Create the application logic
+    - Following either MVC or MVVM, either is simple enough in this case
+    - Mostly involves passing the input from the View through to various parts of the Core 
